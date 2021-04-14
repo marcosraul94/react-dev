@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+// paths and file names
 const entryPath = path.resolve(__dirname, 'src');
 const entry = path.resolve(entryPath, 'index.js');
 const outputFilename = 'bundle.js';
@@ -9,12 +10,14 @@ const htmlTemplateFilename = 'index.html';
 const htmlTemplate = path.resolve(entryPath, htmlTemplateFilename);
 const nodeModules = path.resolve(__dirname, 'node_modules');
 
+// plugins
 const htmlPlugin = new HtmlWebpackPlugin({
   template: htmlTemplate,
   filename: htmlTemplateFilename,
 });
 
-const babel = {
+// loaders
+const babelLoader = {
   test: /\.js$/,
   exclude: nodeModules,
   use: ['babel-loader'],
@@ -28,10 +31,11 @@ module.exports = {
     clean: true,
   },
   module: {
-    rules: [babel],
+    rules: [babelLoader],
   },
   plugins: [htmlPlugin],
   devServer: {
     contentBase: outputPath,
+    port: 4200,
   },
 };
