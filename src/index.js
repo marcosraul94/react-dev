@@ -1,5 +1,5 @@
-import { fn, b as B } from './utils/validation';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-fn();
-const c = new B();
-console.log(c.c);
+ReactDOM.render(<App />, document.getElementById('root'));

@@ -18,7 +18,7 @@ const htmlPlugin = new HtmlWebpackPlugin({
 
 // loaders
 const babelLoader = {
-  test: /\.js$/,
+  test: /\.(js|jsx)$/,
   exclude: nodeModules,
   use: ['babel-loader'],
 };
