@@ -33,6 +33,11 @@ module.exports = {
   module: {
     rules: [babelLoader],
   },
+  resolve: {
+    alias: {
+      src: entryPath,
+    },
+  },
   plugins: [htmlPlugin],
   devServer: {
     contentBase: outputPath,
