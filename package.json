@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "private": "true",
+  "homepage": "https://marcosraul94.github.io/react-dev",
   "scripts": {
     "lint": "eslint ./src/*js",
     "start": "webpack serve --config ./webpack.config.js --mode development --open",
     "build": "webpack --mode production",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d dist",
     "test": "jest"
   },
   "author": "",
@@ -33,6 +36,11 @@
       "^src/(.*)$": "<rootDir>/src/$1"
     }
   },
+  "dependencies": {
+    "gh-pages": "^3.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.13.15",
     "@babel/preset-env": "^7.13.15",
@@ -54,9 +62,5 @@
     "webpack": "^5.32.0",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
-  },
-  "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
   }
 }
